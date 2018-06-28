@@ -15,11 +15,8 @@
 
 
 Route::get('/', function () {
-	phpinfo();
+	return view('welcome');
 });
-
-
-Route::get('/home', 'HomeController@index')->name('home');
 
 //Route::get('/addRole',function(){
 //	auth()->user()->attachRole(1);
@@ -28,3 +25,6 @@ Route::get('/home', 'HomeController@index')->name('home');
 //Route::get('/testRole',function(){
 //	dd( auth()->user()->hasRole('owner') );
 //});
+Auth::routes();
+
+Route::get('/home', 'HomeController@index')->name('home');
